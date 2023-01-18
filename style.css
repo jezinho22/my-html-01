@@ -57,15 +57,18 @@ section {
     padding: 20px;
     font-size: larger;
 }
+footer {
+    background-color: #f5ebeb;
+}
 .footerNav {
     display: inline-block;
-    margin: 10px;
-    padding: 5px;
-
+    margin: 0 10px;
 }
 .footerNav a {
     text-decoration: none;
     color:#070f4e;
 }
-.footerNav:hover a {text-decoration: underline; color:#f5ebeb}
+.footerNav:hover a {text-decoration: underline; color:#2772db}
+.socialmedia {
+    margin: 20px 0;
 }
