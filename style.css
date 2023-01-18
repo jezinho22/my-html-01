@@ -1,6 +1,30 @@
+palette.first-color { 
+	background: #070f4e; 
+}	
+.second-color { 
+	background: #2772db; 
+}
+.third-color { 
+	background: #3ab1c8; 
+}
+
+.fourth-color { 
+	background: #f5ebeb; 
+}
 body{
     background-color:cornflowerblue;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color:blanchedalmond;
     text-align: center;
+}
+    
+.cropped {
+    width: 100%; 
+    height: 400px; 
+    object-fit: cover;
+    object-position: 35% 60%;
+    border-radius: 16px; 
+    }
+ul {
+    display:inline;
 }
