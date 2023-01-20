@@ -51,27 +51,41 @@ function numberGuess() {
     guessCounter++;
     guess = prompt("Guess my number: give a number 1 to 10");
   }
-  document.write(`You got it. You took ${guessCounter} guesses`&nbsp;&nbsp;)
+  document.write(`You got it. You took ${guessCounter} guesses`);
 }
 
-// function getRating() {
-//   let acceptable = 0;
-//   // get the rating and keep asking until user gives 1 to 5
-//   while (acceptable != 1) {
-//     let rating = prompt("Please rate my website 1-5");
-//     if (rating < 1 || rating > 5) {
-//       prompt("Sorry. That's not between 1 and 5. Please rate my website 1-5");
-//     } else {
-//       acceptable = 1;
-//     }
-//   }
+function rateMySite() {
+  let rating = prompt("Please rate this site (1 - 5)");
+  let output = "";
+  for (let i = 0; i < rating; i++) {
+    //console.log(i);
+    output =
+      output +
+      "<img src='rugby-ball 512x512.png' style='width:25%; height:25%;'>";
+  }
+}
 
-//   let output = "You rate us: ";
-//   // transform rating into message plus icons
-//   for (let i = 0; i < rating; i++) {
-//     output =
-//       output +
-//       "<img src='rugby-ball 512x512.png' style='width:25%; height:25%;'>";
-//   }
-//   document.write(output);
-// }
+// function that lets the user rate the website
+function getRating() {
+  let acceptable = 0;
+
+  while (acceptable != 1) {
+    let rating = prompt("Please rate my website 1-5");
+    if (rating > 5) {
+      prompt("Sorry that's too big. Please rate my website 1-5");
+    } else if (rating < 0) {
+      prompt("Sorry that's less than 0. Please rate my website 1-5");
+    } else {
+      acceptable = 1;
+    }
+  }
+
+  let output = "You rate us: ";
+
+  for (let i = 0; i < rating; i++) {
+    output =
+      output +
+      "<img src='rugby-ball 512x512.png' style='width:25px; height:25px'>";
+  }
+  document.write(output);
+}
