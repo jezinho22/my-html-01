@@ -49,28 +49,29 @@ function numberGuess() {
   let guessCounter = 0;
   while (number != guess) {
     guessCounter++;
-    guess = prompt("Guess my number: give a number 1 to 10");
+    guess = number; //prompt("Guess my number: give a number 1 to 10");
   }
-  document.write(`You got it. You took ${guessCounter} guesses`);
+  document.write("You got it in " + guessCounter + " guesses");
 }
 
 function rateMySite() {
-  let rating = prompt("Please rate this site (1 - 5)");
+  let rating = 3; //prompt("Please rate this site (1 - 5)");
   let output = "";
   for (let i = 0; i < rating; i++) {
     //console.log(i);
     output =
       output +
       "<img src='rugby-ball 512x512.png' style='width:25%; height:25%;'>";
+    console.log(output);
   }
 }
 
 // function that lets the user rate the website
 function getRating() {
   let acceptable = 0;
-
+  let rating = 3;
   while (acceptable != 1) {
-    let rating = prompt("Please rate my website 1-5");
+    rating = prompt("Please rate my website 1-5");
     if (rating > 5) {
       prompt("Sorry that's too big. Please rate my website 1-5");
     } else if (rating < 0) {
@@ -88,4 +89,5 @@ function getRating() {
       "<img src='rugby-ball 512x512.png' style='width:25px; height:25px'>";
   }
   document.write(output);
+  document.write("Hello" * 3);
 }
