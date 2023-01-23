@@ -1,6 +1,6 @@
 // function gets and writes user name
 function getName() {
-  let myName = "Jez"; //prompt("What is your name?");
+  let myName = prompt("What is your name?");
   document.write(myName);
 }
 
@@ -8,7 +8,7 @@ function getName() {
 function getExperience() {
   let experience = "";
   while (experience == "") {
-    let myExperience = 2; //prompt("How experienced a player are you? (1-4) 1: beginner, 2: amateur, 3: semi-pro, 4:pro");
+    let myExperience = prompt("How experienced a player are you? (1-4) 1: beginner, 2: amateur, 3: semi-pro, 4:pro");
     if (myExperience == 1) {
       experience = " (Beginner level)";
     } else if (myExperience == 2) {
@@ -29,7 +29,7 @@ function getExperience() {
 // function sets background colour as chosen by user
 function chooseBackground() {
   let colourCode = "#3ab1c8";
-  let myColour = 3; //prompt("Choose background colour: 1 = blue, 2 = green, 3 = red, 4 = white");
+  let myColour = prompt("Choose background colour: 1 = blue, 2 = green, 3 = red, 4 = white");
   if (myColour == 1) {
     colourCode = "#5497A7";
   } else if (myColour == 2) {
@@ -49,22 +49,24 @@ function numberGuess() {
   let guessCounter = 0;
   while (number != guess) {
     guessCounter++;
-    guess = number; //prompt("Guess my number: give a number 1 to 10");
+    guess = prompt("Guess my number: give a number 1 to 10");
   }
-  document.write("You got it in " + guessCounter + " guesses");
+  let element = document.getElementById("numberGuess");
+  element.textContent = ("You guessed my number in " + guessCounter + " guesses");
+  element.style="background-color:#f5ebeb; color:#2772db;";
 }
 
-function rateMySite() {
-  let rating = 3; //prompt("Please rate this site (1 - 5)");
-  let output = "";
-  for (let i = 0; i < rating; i++) {
-    //console.log(i);
-    output =
-      output +
-      "<img src='rugby-ball 512x512.png' style='width:25%; height:25%;'>";
-    console.log(output);
-  }
-}
+// function rateMySite() {
+//   let rating = 3; //prompt("Please rate this site (1 - 5)");
+//   let output = "";
+//   for (let i = 0; i < rating; i++) {
+//     //console.log(i);
+//     output =
+//       output +
+//       "<img src='rugby-ball 512x512.png' style='width:25%; height:25%;'>";
+//     console.log(output);
+//   }
+// }
 
 // function that lets the user rate the website
 function getRating() {
@@ -81,13 +83,13 @@ function getRating() {
     }
   }
 
-  let output = "You rate us: ";
+  let output = `You rate us: `;
 
   for (let i = 0; i < rating; i++) {
     output =
-      output +
-      "<img src='rugby-ball 512x512.png' style='width:25px; height:25px'>";
+      `${output}<img src='rugby-ball 512x512.png' style='width:16px; height:16px'>`;
   }
-  document.write(output);
-  document.write("Hello" * 3);
+  let element = document.getElementById("rateMe");
+  element.innerHTML = output;
+  element.style="background-color:#f5ebeb; color:#2772db;";
 }
